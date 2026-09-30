@@ -11,21 +11,17 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import CertificateVerifierModal from "./CertificateVerifierModal";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Our Verticals", href: "/verticals" },
-  { name: "Infrastructure", href: "/infrastructure" },
-  { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isCertModalOpen, setIsCertModalOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -53,7 +49,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-gold-400 font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-              ISO Certified Examination & Assessment Agency
+              Trusted Partner for Fair Exams & Assessments
             </span>
             <span className="text-slate-400">|</span>
             <a
@@ -141,25 +137,25 @@ export default function Navbar() {
 
             {/* Desktop Verify Certificate CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              <button
-                onClick={() => setIsCertModalOpen(true)}
+              <Link
+                href="/verify-certificate"
                 className="bg-gold-500 hover:bg-gold-400 active:scale-95 text-navy-950 font-bold px-5 py-2.5 rounded-full shadow-gold hover:shadow-gold-lg transition-all duration-200 text-xs sm:text-sm flex items-center gap-2 cursor-pointer border border-gold-300"
               >
                 <ShieldCheck className="w-4 h-4 text-navy-950 stroke-[2.2]" />
                 <span>Verify Certificate</span>
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Hamburger Button */}
             <div className="flex items-center gap-2 lg:hidden">
-              <button
-                onClick={() => setIsCertModalOpen(true)}
+              <Link
+                href="/verify-certificate"
                 className="bg-gold-500 text-navy-950 font-bold px-3 py-1.5 rounded-full text-xs flex items-center gap-1 sm:hidden border border-gold-300"
                 aria-label="Verify Certificate"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>Verify</span>
-              </button>
+              </Link>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 rounded-xl text-slate-200 hover:text-white hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-colors"
@@ -202,16 +198,14 @@ export default function Navbar() {
             </nav>
 
             <div className="pt-3 border-t border-navy-800">
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  setIsCertModalOpen(true);
-                }}
+              <Link
+                href="/verify-certificate"
+                onClick={() => setIsOpen(false)}
                 className="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold py-3 px-5 rounded-full shadow-gold text-sm flex items-center justify-center gap-2"
               >
                 <ShieldCheck className="w-5 h-5 text-navy-950" />
                 <span>Verify Certificate Online</span>
-              </button>
+              </Link>
             </div>
 
             <div className="pt-2 text-center text-xs text-slate-400">
@@ -220,12 +214,6 @@ export default function Navbar() {
           </div>
         )}
       </header>
-
-      {/* Global Certificate Verifier Modal */}
-      <CertificateVerifierModal
-        isOpen={isCertModalOpen}
-        onClose={() => setIsCertModalOpen(false)}
-      />
     </>
   );
 }

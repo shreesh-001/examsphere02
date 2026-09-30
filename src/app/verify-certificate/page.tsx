@@ -10,6 +10,7 @@ import {
   User,
   GraduationCap,
   Award,
+  Printer,
 } from "lucide-react";
 
 interface VerificationResult {
@@ -31,8 +32,30 @@ const mockCertificates: Record<string, VerificationResult> = {
     programName: "National Science & Aptitude Olympiad 2024",
     rollNumber: "ES-NSA-90214",
     issueDate: "15 August 2024",
-    scoreOrRank: "All India Rank 14 (99.82 Percentile)",
+    scoreOrRank: "All India Rank 1 (Score: 99/100)",
     grade: "Gold Medalist",
+    status: "verified",
+    institution: "Exam Sphere National Assessment Board",
+  },
+  "ES-2024-OLY-1002": {
+    certificateId: "ES-2024-OLY-1002",
+    candidateName: "Ananya Singh",
+    programName: "Mathematics & Logic Challenge 2024",
+    rollNumber: "ES-MLC-80145",
+    issueDate: "20 August 2024",
+    scoreOrRank: "All India Rank 2 (Score: 98/100)",
+    grade: "Silver Medalist",
+    status: "verified",
+    institution: "Exam Sphere National Assessment Board",
+  },
+  "ES-2024-OLY-1003": {
+    certificateId: "ES-2024-OLY-1003",
+    candidateName: "Rohan Gupta",
+    programName: "Computer & AI Olympiad 2024",
+    rollNumber: "ES-CAI-70231",
+    issueDate: "25 August 2024",
+    scoreOrRank: "All India Rank 3 (Score: 97/100)",
+    grade: "Bronze Medalist",
     status: "verified",
     institution: "Exam Sphere National Assessment Board",
   },
@@ -103,15 +126,15 @@ export default function VerifyCertificatePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 bg-gold-500/20 text-gold-300 border border-gold-400/30">
             <ShieldCheck className="w-4 h-4" />
-            Official Credential Verification
+            Certificate Verification
           </div>
 
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-            Verify Certificate & <span className="text-gold-400">Olympiad Credentials</span>
+            Verify Certificate & <span className="text-gold-400">Student Awards</span>
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Exam Sphere provides cryptographic, tamper-proof credential authentication for all student awards, assessment scorecards, and workforce certifications.
+            Quickly check and verify any Exam Sphere student award, Olympiad scorecard, or staff certificate online.
           </p>
         </div>
       </section>
@@ -122,10 +145,10 @@ export default function VerifyCertificatePage() {
           {/* Search Card */}
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 mb-8">
             <h2 className="font-serif text-xl sm:text-2xl font-bold text-navy-900 mb-2">
-              Enter Certificate Identification Number
+              Enter Certificate Code
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 mb-6">
-              Please enter the unique certificate code found on the lower edge or digital header of the document.
+              Type the certificate number printed at the bottom of your certificate to view verified official details.
             </p>
 
             <form onSubmit={handleVerify} className="flex flex-col sm:flex-row gap-3">
@@ -147,11 +170,11 @@ export default function VerifyCertificatePage() {
                 className="bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold px-8 py-3.5 rounded-xl shadow-gold hover:shadow-gold-lg transition-all text-sm flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 {isLoading ? (
-                  <span>Checking Registry...</span>
+                  <span>Checking...</span>
                 ) : (
                   <>
                     <ShieldCheck className="w-4 h-4" />
-                    <span>Authenticate</span>
+                    <span>Verify Certificate</span>
                   </>
                 )}
               </button>
@@ -263,10 +286,20 @@ export default function VerifyCertificatePage() {
                 <span>
                   Issuing Body: <strong>{result.institution}</strong>
                 </span>
-                <span className="text-emerald-700 font-semibold flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  Digital Tamper-Proof Seal Confirmed
-                </span>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => window.print()}
+                    className="bg-navy-950 hover:bg-navy-900 active:scale-95 text-gold-400 font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer border border-gold-400/40"
+                  >
+                    <Printer className="w-3.5 h-3.5 text-gold-400" />
+                    <span>Print / Save PDF</span>
+                  </button>
+                  <span className="text-emerald-700 font-semibold flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Verified Credential
+                  </span>
+                </div>
               </div>
             </div>
           )}

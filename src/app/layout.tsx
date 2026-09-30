@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Watermark from "@/components/Watermark";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,7 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geistSans.variable}>
-      <body className="font-sans antialiased flex flex-col min-h-screen selection:bg-gold-500 selection:text-navy-950 bg-white text-slate-800">
+      <body className="font-sans antialiased flex flex-col min-h-screen selection:bg-gold-500 selection:text-navy-950 bg-white text-slate-800 relative">
+        <Watermark />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

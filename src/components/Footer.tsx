@@ -20,10 +20,10 @@ export default function Footer() {
               Partner With Exam Sphere
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-              Ready to Conduct Seamless, Secure Examinations?
+              Ready to Organize Fair, Honest Exams?
             </h3>
             <p className="text-slate-300 text-sm mt-1 max-w-2xl">
-              From school olympiads to nationwide government testing centers and manpower supply, we ensure precision, integrity, and excellence.
+              From school Olympiads to modern computer exam centers and honest test staff, we help make every test easy and secure.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-slate-300 leading-relaxed">
-              Exam Sphere is an institutional leader in talent Olympiads, examination manpower outsourcing, online & offline CBT government testing facilities, and comprehensive educational development.
+              Exam Sphere helps schools, colleges, and government bodies run fair, honest exams. We provide talent Olympiads, trained test staff, modern computer labs, and quality school supplies.
             </p>
 
             {/* Social Icons (SVGs) */}
@@ -169,24 +169,6 @@ export default function Footer() {
                 >
                   <ArrowRight className="w-3.5 h-3.5 text-gold-400" />
                   <span>Our Verticals</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/infrastructure"
-                  className="hover:text-gold-400 transition-colors flex items-center gap-2"
-                >
-                  <ArrowRight className="w-3.5 h-3.5 text-gold-400" />
-                  <span>Infrastructure</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/gallery"
-                  className="hover:text-gold-400 transition-colors flex items-center gap-2"
-                >
-                  <ArrowRight className="w-3.5 h-3.5 text-gold-400" />
-                  <span>Media Gallery</span>
                 </Link>
               </li>
               <li>

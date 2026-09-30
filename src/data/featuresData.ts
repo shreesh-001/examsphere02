@@ -3,7 +3,6 @@ export interface FeatureItem {
   iconName: string;
   title: string;
   description: string;
-  badge?: string;
   highlight?: boolean;
 }
 
@@ -13,8 +12,7 @@ export const whyChooseUsFeatures: FeatureItem[] = [
     iconName: "shield",
     title: "Instant Certificate Verification",
     description:
-      "Enterprise tamper-proof digital verification system allowing students, employers, and institutions to validate credentials instantly via serial IDs.",
-    badge: "Verified Integrity",
+      "Verify any student certificate or award online in seconds using its unique code.",
     highlight: true,
   },
   {
@@ -22,55 +20,41 @@ export const whyChooseUsFeatures: FeatureItem[] = [
     iconName: "award",
     title: "Training & Skill Development",
     description:
-      "Specialized modules preparing students for competitive excellence and upskilling examination staff to ensure peak procedural compliance.",
-    badge: "Industry Standard",
+      "Helpful practice workshops for students and practical training for exam staff.",
   },
   {
     id: "vetted-workforce",
     iconName: "users",
-    title: "Vetted & Certified Manpower",
+    title: "Verified & Trained Staff",
     description:
-      "Rigorously screened invigilators, observers, and IT proctors with verified background checks and proven high-stakes examination experience.",
-    badge: "Zero Compromise",
+      "Honest, background-checked invigilators and supervisors who follow exam rules strictly.",
   },
   {
     id: "exam-infrastructure",
     iconName: "building",
     title: "Modern Exam Centers",
     description:
-      "Equipped with isolated Gigabit LAN networks, live multi-angle CCTV feeds, biometric authentication, and dual-generator power backup.",
-    badge: "CBT Ready",
+      "Fast computers, quiet rooms, CCTV cameras, and power generators that keep tests running.",
   },
   {
     id: "strict-confidentiality",
     iconName: "lock",
-    title: "Bank-Grade Confidentiality",
+    title: "Safe & Secret Papers",
     description:
-      "End-to-end chain of custody, tamper-evident security packaging, barcoded tracking, and air-gapped test delivery protocols.",
-    badge: "ISO 27001 Ready",
+      "Sealed envelopes, strict key locks, and secure rooms to keep question papers 100% confidential.",
   },
   {
     id: "proven-track-record",
     iconName: "sparkles",
-    title: "Proven Institutional Track Record",
+    title: "Trusted by Institutions",
     description:
-      "Trusted by governmental bodies, prominent educational institutions, and corporate boards across North India for fair assessment execution.",
-    badge: "100k+ Assessed",
+      "Schools, universities, and government boards count on us for fair and honest tests.",
   },
 ];
 
 export const keyStats = [
-  { value: "150,000+", label: "Students Assessed", sub: "Across Olympiads & Tests" },
-  { value: "250+", label: "Partner Schools & Centers", sub: "Statewide Coverage" },
-  { value: "1,500+", label: "Vetted Exam Manpower", sub: "Invigilators & Proctors" },
-  { value: "99.98%", label: "Examination Reliability", sub: "Zero Incident Record" },
-];
-
-export const clientLogos = [
-  "National School Consortium",
-  "Apex Technical Board",
-  "State Talent Search Council",
-  "Northern Educational Trust",
-  "Premier Institute of Science",
-  "District Assessment Directorate",
+  { value: "150,000+", label: "Students Assessed", sub: "In School Olympiads & Tests" },
+  { value: "250+", label: "Partner Schools & Centers", sub: "Across the Region" },
+  { value: "1,500+", label: "Trained Exam Staff", sub: "Invigilators & Supervisors" },
+  { value: "100%", label: "Fair & Secure", sub: "Zero Paper Leaks" },
 ];

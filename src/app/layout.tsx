@@ -14,14 +14,14 @@ const geistSans = localFont({
 export const metadata: Metadata = {
   title: "Exam Sphere | Redefining Excellence | Olympiads & Assessment Solutions",
   description:
-    "Exam Sphere is a premier educational and testing services organization offering Exam Olympiads, Manpower Supply, Recruitment Outsourcing, Government Exam Centers, Educational Supplies, and Skill Development.",
+    "Exam Sphere is a premier educational and testing services organization offering Exam Olympiads, Outsourcing Recruitment (Manpower Supply), Government Exam Centers, Educational Supplies, and Skill Development.",
   keywords: [
     "Exam Sphere",
     "Exam Olympiads",
     "Redefining Excellence",
     "Government Exam Centers",
+    "Outsourcing Recruitment",
     "Manpower Supply",
-    "Recruitment Outsourcing",
     "Educational Supplies",
     "Training & Skill Development",
     "Certificate Verification",

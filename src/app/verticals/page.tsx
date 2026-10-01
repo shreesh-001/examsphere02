@@ -5,7 +5,7 @@ import VerticalsClient from "@/components/VerticalsClient";
 export const metadata: Metadata = {
   title: "Our Verticals | Exam Sphere - Redefining Excellence",
   description:
-    "Explore the six comprehensive business verticals of Exam Sphere: Olympiads, Manpower Supply, Recruitment Outsourcing, Government Exam Centers, Educational Supplies, and Training.",
+    "Explore the five comprehensive business verticals of Exam Sphere: Olympiads, Outsourcing Recruitment (Manpower Supply), Government Exam Centers, Educational Supplies, and Training.",
 };
 
 export default function VerticalsPage() {

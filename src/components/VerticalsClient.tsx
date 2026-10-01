@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Trophy,
-  Users,
   Briefcase,
   Building2,
   Package,
@@ -18,21 +17,16 @@ import { verticalsData } from "@/data/verticalsData";
 
 const verticalIcons: Record<string, React.ReactNode> = {
   olympiads: <Trophy className="w-8 h-8 text-gold-500" />,
-  manpower: <Users className="w-8 h-8 text-gold-500" />,
-  recruitment: <Briefcase className="w-8 h-8 text-gold-500" />,
+  "recruitment-manpower": <Briefcase className="w-8 h-8 text-gold-500" />,
   centers: <Building2 className="w-8 h-8 text-gold-500" />,
   supplies: <Package className="w-8 h-8 text-gold-500" />,
   training: <GraduationCap className="w-8 h-8 text-gold-500" />,
 };
 
 const verticalCtaButtons: Record<string, { label: string; subject: string }> = {
-  manpower: {
-    label: "Request Exam Staff & Invigilators",
-    subject: "Inquiry regarding Manpower Supply & Invigilators",
-  },
-  recruitment: {
-    label: "Inquire for Recruitment Outsourcing",
-    subject: "Inquiry regarding Recruitment Outsourcing",
+  "recruitment-manpower": {
+    label: "Inquire for Recruitment & Exam Staffing",
+    subject: "Inquiry regarding Outsourcing Recruitment (Manpower Supply)",
   },
   centers: {
     label: "Inquire About Test Centers & Booking",
@@ -63,11 +57,11 @@ export default function VerticalsClient() {
           </div>
 
           <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5">
-            Our 6 Main <span className="text-gold-400">Business Services</span>
+            Our Main <span className="text-gold-400">Business Services</span>
           </h1>
 
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            From school Olympiads and test centers to exam staff and supplies, we make sure examinations run smoothly and honestly.
+            From school Olympiads and test centers to recruitment outsourcing, exam staff, and supplies, we make sure examinations run smoothly and honestly.
           </p>
         </div>
       </section>
@@ -112,10 +106,18 @@ export default function VerticalsClient() {
             <section
               key={vertical.slug}
               id={vertical.slug}
-              className={`py-18 lg:py-24 scroll-mt-28 ${
+              className={`py-18 lg:py-24 scroll-mt-28 relative ${
                 isEven ? "bg-white" : "bg-slate-50"
               }`}
             >
+              {/* Backward compatibility anchors for former separate sections */}
+              {vertical.slug === "recruitment-manpower" && (
+                <>
+                  <span id="recruitment" className="absolute -top-28" />
+                  <span id="manpower" className="absolute -top-28" />
+                </>
+              )}
+
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                   {/* Visual / Image Side */}

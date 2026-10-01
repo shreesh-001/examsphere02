@@ -408,7 +408,7 @@ export default function OlympiadsClient() {
           href="/verticals"
           className="inline-flex items-center gap-2 text-sm font-semibold text-navy-900 hover:text-gold-600 transition-colors"
         >
-          <span>← Back to All 6 Services</span>
+          <span>← Back to All 5 Services</span>
         </Link>
       </div>
     </div>

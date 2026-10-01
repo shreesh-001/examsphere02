@@ -4,13 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  Menu,
-  X,
-  ShieldCheck,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -42,178 +36,113 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <>
-      {/* Top micro-bar for institutional credibility */}
-      <div className="bg-navy-950 text-slate-300 text-xs border-b border-navy-800/80 py-1.5 px-4 hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-gold-400 font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-              Trusted Partner for Fair Exams & Assessments
-            </span>
-            <span className="text-slate-400">|</span>
-            <a
-              href="tel:+919876543210"
-              className="flex items-center gap-1.5 hover:text-gold-300 transition-colors"
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        isScrolled
+          ? "bg-navy-900/98 backdrop-blur-md shadow-xl py-3 border-b border-navy-800"
+          : "bg-navy-900 py-4 border-b border-navy-800/80"
+      }`}
+    >
+      <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="flex items-center justify-between">
+          {/* Brand Logo & Wordmark */}
+          <Link
+            href="/"
+            className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-gold-500 rounded-lg pr-2"
+          >
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-gold-400/80 bg-navy-950 shadow-md group-hover:border-gold-300 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+              <Image
+                src="/images/logo.jpg"
+                alt="Exam Sphere Emblem Logo"
+                fill
+                sizes="48px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif text-lg sm:text-xl font-extrabold tracking-wider text-white group-hover:text-gold-300 transition-colors uppercase leading-none">
+                EXAM SPHERE
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-gold-400 tracking-[0.2em] uppercase mt-1 leading-none">
+                REDEFINING EXCELLENCE
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+            {navLinks.map((link) => {
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 relative ${
+                    isActive
+                      ? "text-gold-400 font-semibold bg-navy-800/80"
+                      : "text-slate-100 hover:text-gold-300 hover:bg-navy-800/50"
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gold-400 rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Mobile Hamburger Button */}
+          <div className="flex items-center lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-xl text-slate-200 hover:text-white hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-colors"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
             >
-              <Phone className="w-3.5 h-3.5 text-gold-400" />
-              <span>+91 98765 43210</span>
-            </a>
-            <a
-              href="mailto:info@examsphere.in"
-              className="flex items-center gap-1.5 hover:text-gold-300 transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 text-gold-400" />
-              <span>info@examsphere.in</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-4 text-[11px] uppercase tracking-wider">
-            <span className="text-slate-400">Regional HQ: Shahganj, Jaunpur, UP</span>
-            <span className="text-slate-500">•</span>
-            <span className="text-gold-400 font-semibold">Redefining Excellence</span>
+              {isOpen ? (
+                <X className="w-6 h-6 text-gold-400" />
+              ) : (
+                <Menu className="w-6 h-6 text-slate-200" />
+              )}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Main Sticky Navbar */}
-      <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
-          isScrolled
-            ? "bg-navy-900/98 backdrop-blur-md shadow-xl py-2.5 border-b border-navy-800"
-            : "bg-navy-900 py-3.5 border-b border-navy-800/80"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            {/* Brand Logo & Wordmark */}
-            <Link
-              href="/"
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-gold-500 rounded-lg pr-2"
-            >
-              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-gold-400/80 bg-navy-950 shadow-md group-hover:border-gold-300 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                <Image
-                  src="/images/logo.jpg"
-                  alt="Exam Sphere Emblem Logo"
-                  fill
-                  sizes="48px"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-lg sm:text-xl font-extrabold tracking-wider text-white group-hover:text-gold-300 transition-colors uppercase leading-none">
-                  EXAM SPHERE
-                </span>
-                <span className="text-[10px] sm:text-[11px] font-semibold text-gold-400 tracking-[0.2em] uppercase mt-1 leading-none">
-                  REDEFINING EXCELLENCE
-                </span>
-              </div>
-            </Link>
+      {/* Mobile Navigation Drawer */}
+      {isOpen && (
+        <div className="lg:hidden bg-navy-950 border-b border-navy-800 animate-fade-in px-4 pt-3 pb-6 space-y-3">
+          <nav className="flex flex-col space-y-1">
+            {navLinks.map((link) => {
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`px-4 py-3 rounded-xl text-base font-medium flex items-center justify-between ${
+                    isActive
+                      ? "bg-navy-800 text-gold-400 font-bold border-l-4 border-gold-400"
+                      : "text-slate-200 hover:bg-navy-850 hover:text-gold-300"
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  <span className="text-xs text-slate-400">→</span>
+                </Link>
+              );
+            })}
+          </nav>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
-              {navLinks.map((link) => {
-                const isActive =
-                  pathname === link.href ||
-                  (link.href !== "/" && pathname.startsWith(link.href));
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative ${
-                      isActive
-                        ? "text-gold-400 font-semibold bg-navy-800/80"
-                        : "text-slate-100 hover:text-gold-300 hover:bg-navy-800/50"
-                    }`}
-                  >
-                    {link.name}
-                    {isActive && (
-                      <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-gold-400 rounded-full" />
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* Desktop Verify Certificate CTA */}
-            <div className="hidden lg:flex items-center gap-3">
-              <Link
-                href="/verify-certificate"
-                className="bg-gold-500 hover:bg-gold-400 active:scale-95 text-navy-950 font-bold px-5 py-2.5 rounded-full shadow-gold hover:shadow-gold-lg transition-all duration-200 text-xs sm:text-sm flex items-center gap-2 cursor-pointer border border-gold-300"
-              >
-                <ShieldCheck className="w-4 h-4 text-navy-950 stroke-[2.2]" />
-                <span>Verify Certificate</span>
-              </Link>
-            </div>
-
-            {/* Mobile Hamburger Button */}
-            <div className="flex items-center gap-2 lg:hidden">
-              <Link
-                href="/verify-certificate"
-                className="bg-gold-500 text-navy-950 font-bold px-3 py-1.5 rounded-full text-xs flex items-center gap-1 sm:hidden border border-gold-300"
-                aria-label="Verify Certificate"
-              >
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Verify</span>
-              </Link>
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-xl text-slate-200 hover:text-white hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-colors"
-                aria-label={isOpen ? "Close menu" : "Open menu"}
-                aria-expanded={isOpen}
-              >
-                {isOpen ? (
-                  <X className="w-6 h-6 text-gold-400" />
-                ) : (
-                  <Menu className="w-6 h-6 text-slate-200" />
-                )}
-              </button>
-            </div>
+          <div className="pt-2 text-center text-xs text-slate-400 border-t border-navy-800/60 mt-3">
+            <span>Exam Sphere • Redefining Excellence</span>
           </div>
         </div>
-
-        {/* Mobile Navigation Drawer */}
-        {isOpen && (
-          <div className="lg:hidden bg-navy-950 border-b border-navy-800 animate-fade-in px-4 pt-3 pb-6 space-y-3">
-            <nav className="flex flex-col space-y-1">
-              {navLinks.map((link) => {
-                const isActive =
-                  pathname === link.href ||
-                  (link.href !== "/" && pathname.startsWith(link.href));
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`px-4 py-3 rounded-xl text-base font-medium flex items-center justify-between ${
-                      isActive
-                        ? "bg-navy-800 text-gold-400 font-bold border-l-4 border-gold-400"
-                        : "text-slate-200 hover:bg-navy-850 hover:text-gold-300"
-                    }`}
-                  >
-                    <span>{link.name}</span>
-                    <span className="text-xs text-slate-400">→</span>
-                  </Link>
-                );
-              })}
-            </nav>
-
-            <div className="pt-3 border-t border-navy-800">
-              <Link
-                href="/verify-certificate"
-                onClick={() => setIsOpen(false)}
-                className="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold py-3 px-5 rounded-full shadow-gold text-sm flex items-center justify-center gap-2"
-              >
-                <ShieldCheck className="w-5 h-5 text-navy-950" />
-                <span>Verify Certificate Online</span>
-              </Link>
-            </div>
-
-            <div className="pt-2 text-center text-xs text-slate-400">
-              <span>Exam Sphere • Redefining Excellence</span>
-            </div>
-          </div>
-        )}
-      </header>
-    </>
+      )}
+    </header>
   );
 }

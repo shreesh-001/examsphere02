@@ -93,7 +93,7 @@ export default function ContactClient() {
                   We Are Here to Help
                 </h2>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Headquartered in Shahganj, Jaunpur, we provide exam and training services across Uttar Pradesh and North India.
+                  Headquartered in Lucknow, Uttar Pradesh, Exam Sphere LLP provides comprehensive exam and educational management services across India.
                 </p>
               </div>
 
@@ -105,14 +105,19 @@ export default function ContactClient() {
                   </div>
                   <div>
                     <h3 className="font-serif text-base font-bold text-navy-900 mb-1">
-                      Main Office Address
+                      Registered Office Address
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      Shahganj, Jaunpur, Uttar Pradesh - 222197, India
+                      529/297, PAC Gate, Raheem Nagar, Mahanagar, Lucknow, Uttar Pradesh – 226006
                     </p>
-                    <span className="inline-block mt-2 text-[11px] font-semibold text-gold-700 bg-gold-50 px-2.5 py-0.5 rounded-full border border-gold-200">
-                      Head Office
-                    </span>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="text-[11px] font-semibold text-gold-700 bg-gold-50 px-2.5 py-0.5 rounded-full border border-gold-200">
+                        Exam Sphere LLP
+                      </span>
+                      <span className="text-[11px] font-mono text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200">
+                        LLPIN: ADB-3886
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -125,24 +130,24 @@ export default function ContactClient() {
                   </div>
                   <div>
                     <h3 className="font-serif text-base font-bold text-navy-900 mb-1">
-                      Call & WhatsApp
+                      Phone & Support
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600">
-                      Helpline:{" "}
+                      Primary:{" "}
                       <a
-                        href="tel:+919876543210"
+                        href="tel:+918881088575"
                         className="text-navy-950 font-semibold hover:text-gold-600"
                       >
-                        +91 98765 43210
+                        +91 88810 88575
                       </a>
                     </p>
                     <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
-                      Support:{" "}
+                      Secondary:{" "}
                       <a
-                        href="tel:+918765432109"
+                        href="tel:+918005147115"
                         className="text-navy-950 font-semibold hover:text-gold-600"
                       >
-                        +91 87654 32109
+                        +91 80051 47115
                       </a>
                     </p>
                   </div>
@@ -160,22 +165,16 @@ export default function ContactClient() {
                       Email Us
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600">
-                      General:{" "}
+                      Public Email:{" "}
                       <a
-                        href="mailto:info@examsphere.in"
-                        className="text-navy-950 font-semibold hover:text-gold-600"
+                        href="mailto:examsphereindia12@gmail.com"
+                        className="text-navy-950 font-semibold hover:text-gold-600 break-all"
                       >
-                        info@examsphere.in
+                        examsphereindia12@gmail.com
                       </a>
                     </p>
-                    <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
-                      Support:{" "}
-                      <a
-                        href="mailto:support@examsphere.in"
-                        className="text-navy-950 font-semibold hover:text-gold-600"
-                      >
-                        support@examsphere.in
-                      </a>
+                    <p className="text-[11px] text-slate-500 mt-1">
+                      Udyam: UDYAM-UP-50-0297898
                     </p>
                   </div>
                 </div>
@@ -315,8 +314,7 @@ export default function ContactClient() {
                         >
                           <option value="General Inquiry">General Question</option>
                           <option value="Exam Sphere Olympiads">School Olympiads</option>
-                          <option value="Manpower Supply">Exam Staff / Invigilators</option>
-                          <option value="Outsourcing Recruitment">Hiring & Recruitment Tests</option>
+                          <option value="Outsourcing Recruitment (Manpower Supply)">Outsourcing Recruitment (Manpower Supply)</option>
                           <option value="Government Exam Centers">Exam Centers (Computer & Paper)</option>
                           <option value="Educational Support Goods">Exam Stationery & School Supplies</option>
                           <option value="Training & Skill Development">Training & Workshops</option>
@@ -389,17 +387,17 @@ export default function ContactClient() {
               Find Us on Map
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900">
-              Exam Sphere Office Location
+              Exam Sphere Registered Office
             </h3>
             <p className="text-slate-600 text-xs sm:text-sm mt-1">
-              Shahganj, Jaunpur, Uttar Pradesh - 222197, India
+              529/297, PAC Gate, Raheem Nagar, Mahanagar, Lucknow, Uttar Pradesh – 226006
             </p>
           </div>
 
           <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-200 relative h-80 sm:h-96 bg-slate-200">
             <iframe
-              title="Exam Sphere Shahganj Jaunpur Location"
-              src="https://maps.google.com/maps?q=Shahganj,+Jaunpur,+Uttar+Pradesh,+India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              title="Exam Sphere Lucknow Location"
+              src="https://maps.google.com/maps?q=529/297,+PAC+Gate,+Raheem+Nagar,+Mahanagar,+Lucknow,+Uttar+Pradesh,+India&t=&z=14&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -412,10 +410,10 @@ export default function ContactClient() {
             <div className="absolute top-4 left-4 p-4 rounded-xl bg-navy-950/90 backdrop-blur-md border border-gold-400/40 text-white shadow-lg hidden sm:block max-w-xs">
               <div className="flex items-center gap-2 text-gold-400 font-bold text-xs uppercase mb-1">
                 <Building className="w-4 h-4" />
-                <span>Exam Sphere Office</span>
+                <span>Exam Sphere LLP</span>
               </div>
               <p className="text-xs text-slate-300">
-                Shahganj, Jaunpur, UP 222197
+                Mahanagar, Lucknow, UP 226006
               </p>
               <span className="inline-block mt-1 text-[10px] text-gold-300 font-medium">
                 Redefining Excellence

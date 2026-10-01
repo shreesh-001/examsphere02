@@ -32,17 +32,19 @@ const iconMap: Record<string, LucideIcon> = {
 interface VerticalCardProps {
   vertical: VerticalItem;
   theme?: "dark" | "light";
+  className?: string;
 }
 
 export default function VerticalCard({
   vertical,
   theme = "dark",
+  className = "",
 }: VerticalCardProps) {
   const Icon = iconMap[vertical.iconName] || Trophy;
 
   if (theme === "dark") {
     return (
-      <div className="group relative rounded-2xl bg-gradient-to-b from-navy-800/90 to-navy-950/90 border border-navy-700/80 p-7 hover:border-gold-500/80 transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-gold/10 flex flex-col justify-between">
+      <div className={`group relative rounded-2xl bg-gradient-to-b from-navy-800/90 to-navy-950/90 border border-navy-700/80 p-7 hover:border-gold-500/80 transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-gold/10 flex flex-col justify-between h-full ${className}`}>
         {/* Glow accent */}
         <div className="absolute top-0 right-0 w-24 h-24 bg-gold-500/5 rounded-full blur-2xl group-hover:bg-gold-500/15 transition-all duration-300 pointer-events-none" />
 
@@ -79,7 +81,7 @@ export default function VerticalCard({
   }
 
   return (
-    <div className="group relative rounded-2xl bg-white border border-slate-200 p-7 hover:border-gold-500 transition-all duration-300 hover:-translate-y-1.5 shadow-sm hover:shadow-xl flex flex-col justify-between">
+    <div className={`group relative rounded-2xl bg-white border border-slate-200 p-7 hover:border-gold-500 transition-all duration-300 hover:-translate-y-1.5 shadow-sm hover:shadow-xl flex flex-col justify-between h-full ${className}`}>
       <div>
         <div className="flex items-center justify-between mb-5">
           <div className="w-14 h-14 rounded-xl bg-navy-50 border border-navy-100 flex items-center justify-center text-navy-900 group-hover:bg-gold-500 group-hover:text-navy-950 group-hover:scale-110 transition-all duration-300 shadow-sm">

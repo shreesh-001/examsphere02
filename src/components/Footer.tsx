@@ -5,7 +5,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
   ArrowRight,
 } from "lucide-react";
 
@@ -71,6 +70,22 @@ export default function Footer() {
             <p className="text-sm text-slate-300 leading-relaxed">
               Exam Sphere helps schools, colleges, and government bodies run fair, honest exams. We provide talent Olympiads, trained test staff, modern computer labs, and quality school supplies.
             </p>
+
+            {/* Corporate Identification Info */}
+            <div className="pt-3 border-t border-navy-800/80 text-xs text-slate-300 space-y-1.5">
+              <div className="flex items-center justify-between py-0.5 border-b border-navy-800/50">
+                <span className="text-slate-400">LLPIN:</span>
+                <span className="text-gold-400 font-mono font-semibold">ADB-3886</span>
+              </div>
+              <div className="flex items-center justify-between py-0.5 border-b border-navy-800/50">
+                <span className="text-slate-400">Incorporation Date:</span>
+                <span className="text-slate-200 font-medium">19/08/2026</span>
+              </div>
+              <div className="flex items-center justify-between py-0.5">
+                <span className="text-slate-400">Udyam Reg. No.:</span>
+                <span className="text-gold-400 font-mono font-semibold">UDYAM-UP-50-0297898</span>
+              </div>
+            </div>
 
             {/* Social Icons (SVGs) */}
             <div className="pt-2 flex items-center gap-3">
@@ -183,11 +198,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Our Verticals */}
+          {/* Our Services */}
           <div>
             <h4 className="font-serif text-base font-bold text-white uppercase tracking-wider mb-5 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-gold-400"></span>
-              Our 6 Verticals
+              Our Services
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
@@ -200,18 +215,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/verticals#manpower"
+                  href="/verticals#recruitment-manpower"
                   className="hover:text-gold-400 transition-colors block"
                 >
-                  Manpower Supply & Staffing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/verticals#recruitment"
-                  className="hover:text-gold-400 transition-colors block"
-                >
-                  Outsourcing Recruitment
+                  Outsourcing Recruitment (Manpower Supply)
                 </Link>
               </li>
               <li>
@@ -241,58 +248,54 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Regional Headquarters */}
+          {/* Registered Office & Contact Info */}
           <div>
             <h4 className="font-serif text-base font-bold text-white uppercase tracking-wider mb-5 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-gold-400"></span>
-              Headquarters
+              Registered Office
             </h4>
-            <div className="space-y-3.5 text-sm">
+            <div className="space-y-4 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block">Main Office:</strong>
-                  <span>Shahganj, Jaunpur, Uttar Pradesh - 222197, India</span>
+                  <strong className="text-white block font-semibold mb-0.5">Exam Sphere LLP</strong>
+                  <span className="text-slate-300 text-xs sm:text-sm leading-relaxed block">
+                    529/297, PAC Gate, Raheem Nagar, Mahanagar, Lucknow, Uttar Pradesh – 226006
+                  </span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block">Helpline:</strong>
-                  <a href="tel:+919876543210" className="hover:text-gold-300">
-                    +91 98765 43210
-                  </a>
-                  <span className="block text-xs text-slate-400">
-                    +91 87654 32109
-                  </span>
+                  <strong className="text-white block font-semibold mb-0.5">Contact Numbers:</strong>
+                  <div className="text-xs sm:text-sm text-slate-300 space-y-1">
+                    <a
+                      href="tel:+918881088575"
+                      className="hover:text-gold-300 block transition-colors"
+                    >
+                      +91 88810 88575
+                    </a>
+                    <a
+                      href="tel:+918005147115"
+                      className="hover:text-gold-300 block transition-colors"
+                    >
+                      +91 80051 47115
+                    </a>
+                  </div>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block">Email:</strong>
+                  <strong className="text-white block font-semibold mb-0.5">Public Email:</strong>
                   <a
-                    href="mailto:info@examsphere.in"
-                    className="hover:text-gold-300 block"
+                    href="mailto:examsphereindia12@gmail.com"
+                    className="hover:text-gold-300 text-xs sm:text-sm text-slate-300 block transition-colors break-all"
                   >
-                    info@examsphere.in
+                    examsphereindia12@gmail.com
                   </a>
-                  <a
-                    href="mailto:support@examsphere.in"
-                    className="hover:text-gold-300 text-xs text-slate-400 block"
-                  >
-                    support@examsphere.in
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-white block">Operational Hours:</strong>
-                  <span>Mon – Sat: 9:00 AM – 6:00 PM</span>
                 </div>
               </div>
             </div>
@@ -300,12 +303,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-14 pt-8 border-t border-navy-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="mt-14 pt-8 border-t border-navy-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            &copy; {new Date().getFullYear()} <strong className="text-white">Exam Sphere</strong>. All rights reserved. Redefining Excellence.
+            &copy; {new Date().getFullYear()} <strong className="text-white">Exam Sphere LLP</strong>. All rights reserved. Redefining Excellence.
           </div>
-          <div className="flex flex-wrap items-center gap-5">
-            <span className="text-slate-500">ISO 9001:2015 Certified Agency</span>
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <span>LLPIN: <strong className="text-slate-300 font-mono">ADB-3886</strong></span>
+            <span className="text-slate-600">•</span>
+            <span>Udyam: <strong className="text-slate-300 font-mono">UDYAM-UP-50-0297898</strong></span>
             <span className="text-slate-600">•</span>
             <Link href="/contact" className="hover:text-gold-400 transition-colors">
               Privacy Policy
@@ -313,10 +318,6 @@ export default function Footer() {
             <span className="text-slate-600">•</span>
             <Link href="/contact" className="hover:text-gold-400 transition-colors">
               Terms & Conditions
-            </Link>
-            <span className="text-slate-600">•</span>
-            <Link href="/contact" className="hover:text-gold-400 transition-colors">
-              Disclaimers
             </Link>
           </div>
         </div>

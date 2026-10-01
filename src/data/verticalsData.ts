@@ -78,7 +78,7 @@ export const verticalsData: VerticalData[] = [
   {
     id: "3",
     slug: "centers",
-    title: "Government Exam Centers (Online & Offline)",
+    title: "Government Exam Management",
     shortDesc:
       "Clean, modern computer labs and exam halls with CCTV cameras, backup generators, and strict security checks.",
     iconName: "building",

@@ -315,7 +315,7 @@ export default function ContactClient() {
                           <option value="General Inquiry">General Question</option>
                           <option value="Exam Sphere Olympiads">School Olympiads</option>
                           <option value="Outsourcing Recruitment (Manpower Supply)">Outsourcing Recruitment (Manpower Supply)</option>
-                          <option value="Government Exam Centers">Exam Centers (Computer & Paper)</option>
+                          <option value="Government Exam Management">Government Exam Management</option>
                           <option value="Educational Support Goods">Exam Stationery & School Supplies</option>
                           <option value="Training & Skill Development">Training & Workshops</option>
                           <option value="Certificate Verification">Certificate Verification Help</option>

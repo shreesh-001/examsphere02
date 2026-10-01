@@ -226,7 +226,7 @@ export default function Footer() {
                   href="/verticals#centers"
                   className="hover:text-gold-400 transition-colors block"
                 >
-                  Govt Exam Centers (CBT & Offline)
+                  Government Exam Management
                 </Link>
               </li>
               <li>

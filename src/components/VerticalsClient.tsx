@@ -29,8 +29,8 @@ const verticalCtaButtons: Record<string, { label: string; subject: string }> = {
     subject: "Inquiry regarding Outsourcing Recruitment (Manpower Supply)",
   },
   centers: {
-    label: "Inquire About Test Centers & Booking",
-    subject: "Inquiry regarding Government Exam Centers",
+    label: "Inquire About Government Exam Management",
+    subject: "Inquiry regarding Government Exam Management",
   },
   supplies: {
     label: "Request Supplies & Equipment Catalog",

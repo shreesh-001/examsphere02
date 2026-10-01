@@ -100,7 +100,7 @@ export default function HomeClient() {
               </h1>
 
               <p className="text-base sm:text-lg text-slate-200 leading-relaxed mb-4">
-                Exam Sphere is an educational organization dedicated to fair tests and honest evaluations. Based in Shahganj, Jaunpur (Uttar Pradesh), we bridge the gap between classroom learning and standardized national testing.
+                Exam Sphere is an educational organization dedicated to fair tests and honest evaluations. Registered Office Address: 529/297, PAC Gate, Raheem Nagar, Mahanagar, Lucknow, Uttar Pradesh – 226006. We bridge the gap between classroom learning and standardized national testing.
               </p>
 
               <p className="text-base text-slate-300 leading-relaxed mb-6">

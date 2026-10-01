@@ -88,7 +88,7 @@ export default function AboutPage() {
               </p>
 
               <p className="text-base text-slate-600 leading-relaxed mb-6">
-                Headquartered in Shahganj, Jaunpur (Uttar Pradesh), Exam Sphere provides high-quality exam solutions. We organize school Olympiads, set up modern computer test centers, provide honest exam staff, and supply tamper-proof exam stationery. Our core promise is simple: <em>Redefining Excellence at every step</em>.
+                Registered Office Address: 529/297, PAC Gate, Raheem Nagar, Mahanagar, Lucknow, Uttar Pradesh – 226006. Exam Sphere provides high-quality exam solutions. We organize school Olympiads, set up modern computer test centers, provide honest exam staff, and supply tamper-proof exam stationery. Our core promise is simple: <em>Redefining Excellence at every step</em>.
               </p>
 
               {/* Vision and Mission Cards */}

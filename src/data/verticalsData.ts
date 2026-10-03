@@ -109,7 +109,7 @@ export const verticalsData: VerticalData[] = [
   {
     id: "4",
     slug: "supplies",
-    title: "Educational Support Goods & Services Supply",
+    title: "Educational Support Goods & Services",
     shortDesc:
       "High-quality exam supplies like watermarked OMR sheets, tamper-proof bags, school desks, and laboratory items.",
     iconName: "package",

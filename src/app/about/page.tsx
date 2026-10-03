@@ -84,7 +84,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-base text-slate-700 leading-relaxed mb-4">
-                Students work hard all year long, and they deserve an exam system they can completely trust. Exam Sphere was created to solve common exam problems like paper leaks, poor computer setups, and unverified results.
+                Students work hard all year long, and they deserve an exam system they can completely trust. Founded by <strong>Ashwani Kumar</strong> and <strong>Owesh Ahmad</strong>, Exam Sphere was created to solve common exam problems like paper leaks, poor computer setups, and unverified results.
               </p>
 
               <p className="text-base text-slate-600 leading-relaxed mb-6">
@@ -201,6 +201,49 @@ export default function AboutPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Leadership & Founders */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Leadership"
+            title="Our Founders"
+            description="Dedicated to fostering trust, academic transparency, and modern examination infrastructure across India."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300">
+              <div className="w-20 h-20 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md">
+                AK
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
+                Ashwani Kumar
+              </h3>
+              <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
+                Founder
+              </p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Dedicated to setting the highest benchmarks in assessment integrity, nationwide examination logistics, and transparent academic testing.
+              </p>
+            </div>
+
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300">
+              <div className="w-20 h-20 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md">
+                OA
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
+                Owesh Ahmad
+              </h3>
+              <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
+                Founder
+              </p>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Committed to delivering robust digital and physical exam infrastructure, student empowerment, and error-free evaluation systems.
+              </p>
+            </div>
           </div>
         </div>
       </section>

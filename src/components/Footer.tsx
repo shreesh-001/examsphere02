@@ -74,6 +74,10 @@ export default function Footer() {
             {/* Corporate Identification Info */}
             <div className="pt-3 border-t border-navy-800/80 text-xs text-slate-300 space-y-1.5">
               <div className="flex items-center justify-between py-0.5 border-b border-navy-800/50">
+                <span className="text-slate-400">Founders:</span>
+                <span className="text-white font-medium">Ashwani Kumar, Owesh Ahmad</span>
+              </div>
+              <div className="flex items-center justify-between py-0.5 border-b border-navy-800/50">
                 <span className="text-slate-400">LLPIN:</span>
                 <span className="text-gold-400 font-mono font-semibold">ADB-3886</span>
               </div>
@@ -261,6 +265,9 @@ export default function Footer() {
                   <strong className="text-white block font-semibold mb-0.5">Exam Sphere LLP</strong>
                   <span className="text-slate-300 text-xs sm:text-sm leading-relaxed block">
                     529/297, PAC Gate, Raheem Nagar, Mahanagar, Lucknow, Uttar Pradesh – 226006
+                  </span>
+                  <span className="text-gold-400 text-xs block mt-1">
+                    Founders: Ashwani Kumar, Owesh Ahmad
                   </span>
                 </div>
               </div>

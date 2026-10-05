@@ -118,7 +118,7 @@ export default function ContactClient() {
                         LLPIN: ADB-3886
                       </span>
                       <span className="text-[11px] text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200">
-                        Founders: Ashwani Kumar, Owesh Ahmad
+                        Founders: Ashwani Kumar, Uvesh Ahmad
                       </span>
                     </div>
                   </div>

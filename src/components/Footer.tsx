@@ -75,7 +75,7 @@ export default function Footer() {
             <div className="pt-3 border-t border-navy-800/80 text-xs text-slate-300 space-y-1.5">
               <div className="flex items-center justify-between py-0.5 border-b border-navy-800/50">
                 <span className="text-slate-400">Founders:</span>
-                <span className="text-white font-medium">Ashwani Kumar, Owesh Ahmad</span>
+                <span className="text-white font-medium">Ashwani Kumar, Uvesh Ahmad</span>
               </div>
               <div className="flex items-center justify-between py-0.5 border-b border-navy-800/50">
                 <span className="text-slate-400">LLPIN:</span>
@@ -276,7 +276,7 @@ export default function Footer() {
                     529/297, PAC Gate, Raheem Nagar, Mahanagar, Lucknow, Uttar Pradesh – 226006
                   </span>
                   <span className="text-gold-400 text-xs block mt-1">
-                    Founders: Ashwani Kumar, Owesh Ahmad
+                    Founders: Ashwani Kumar, Uvesh Ahmad
                   </span>
                 </div>
               </div>

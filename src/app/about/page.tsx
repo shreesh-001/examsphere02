@@ -92,7 +92,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-base text-slate-700 leading-relaxed mb-4">
-                Students work hard all year long, and they deserve an exam system they can completely trust. Founded by <strong>Ashwani Kumar</strong> and <strong>Owesh Ahmad</strong>, Exam Sphere was created to solve common exam problems like paper leaks, poor computer setups, and unverified results.
+                Students work hard all year long, and they deserve an exam system they can completely trust. Founded by <strong>Ashwani Kumar</strong> and <strong>Uvesh Ahmad</strong>, Exam Sphere was created to solve common exam problems like paper leaks, poor computer setups, and unverified results.
               </p>
 
               <p className="text-base text-slate-600 leading-relaxed mb-6">
@@ -240,10 +240,10 @@ export default function AboutPage() {
 
             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300">
               <div className="w-20 h-20 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md">
-                OA
+                UA
               </div>
               <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
-                Owesh Ahmad
+                Uvesh Ahmad
               </h3>
               <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
                 Founder

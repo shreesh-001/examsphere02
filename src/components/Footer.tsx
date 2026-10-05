@@ -199,6 +199,15 @@ export default function Footer() {
                   <span>Contact Us</span>
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/#partners"
+                  className="hover:text-gold-400 transition-colors flex items-center gap-2"
+                >
+                  <ArrowRight className="w-3.5 h-3.5 text-gold-400" />
+                  <span>Our Partners</span>
+                </Link>
+              </li>
             </ul>
           </div>
 

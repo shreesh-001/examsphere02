@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
 import {
   CheckCircle2,
@@ -9,8 +10,15 @@ import {
   Scale,
   Globe,
   Trophy,
+  GraduationCap,
+  MapPin,
+  ExternalLink,
+  Star,
+  Building,
+  ArrowRight,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import { partnersData } from "@/data/partnersData";
 
 export const metadata: Metadata = {
   title: "About Us | Exam Sphere - Redefining Excellence",
@@ -243,6 +251,115 @@ export default function AboutPage() {
               <p className="text-sm text-slate-600 leading-relaxed">
                 Committed to delivering robust digital and physical exam infrastructure, student empowerment, and error-free evaluation systems.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Institutional Partners */}
+      <section className="py-16 lg:py-24 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Academic Network"
+            title="Our Partners"
+            description="Collaborating with reputed educational institutions, colleges, and examination centers to ensure fair assessments and transparent test administration."
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
+            {/* Partner Cards */}
+            {partnersData.map((partner) => (
+              <div
+                key={partner.id}
+                className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-gold-500 transition-all duration-300 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gold-50 text-gold-700 border border-gold-200">
+                      <GraduationCap className="w-3.5 h-3.5 text-gold-600" />
+                      {partner.badge || "Academic Partner"}
+                    </span>
+                    {partner.rating && (
+                      <div className="inline-flex items-center gap-1 text-xs font-semibold bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full border border-emerald-200">
+                        <Star className="w-3.5 h-3.5 fill-emerald-600 text-emerald-600" />
+                        <span>{partner.rating} Rating ({partner.ratingCount || "Claimed"})</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900 group-hover:text-gold-600 transition-colors mb-2">
+                    {partner.name}
+                  </h3>
+
+                  <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 mb-4">
+                    <MapPin className="w-4 h-4 text-gold-600 flex-shrink-0" />
+                    <span>{partner.location} {partner.established ? `• Est. ${partner.established}` : ""}</span>
+                  </div>
+
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                    {partner.description}
+                  </p>
+
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-600 mb-6">
+                    <strong className="text-slate-800 block mb-0.5">Address:</strong>
+                    {partner.fullAddress}
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                  <a
+                    href={partner.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-850 active:scale-95 text-white font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-md hover:shadow-lg transition-all group/btn"
+                  >
+                    <span>View on Justdial</span>
+                    <ExternalLink className="w-4 h-4 text-gold-400 group-hover/btn:translate-x-0.5 transition-transform" />
+                  </a>
+
+                  <span className="text-xs text-slate-500">
+                    Verified Institutional Partner
+                  </span>
+                </div>
+              </div>
+            ))}
+
+            {/* Partnership Network Info Card */}
+            <div className="lg:col-span-5 bg-gradient-to-b from-navy-900 to-navy-950 text-white rounded-3xl p-6 sm:p-8 border border-navy-800 shadow-md flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 border border-gold-400/30 flex items-center justify-center mb-5">
+                  <Building className="w-6 h-6" />
+                </div>
+                <h4 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
+                  Partner Your College or School
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                  Join Exam Sphere&apos;s verified testing network. We collaborate with degree colleges, polytechnics, and schools to conduct secure computer-based and offline examinations.
+                </p>
+                <div className="space-y-2.5 text-xs text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
+                    <span>Host National & State Examination Centers</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
+                    <span>Conduct School & College Talent Olympiads</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
+                    <span>Educational Support Goods & Services</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-navy-800">
+                <Link
+                  href="/contact?subject=College%20Partnership%20Inquiry"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 active:scale-95 text-navy-950 font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-gold transition-all"
+                >
+                  <span>Become a Partner</span>
+                  <ArrowRight className="w-4 h-4 text-navy-950" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

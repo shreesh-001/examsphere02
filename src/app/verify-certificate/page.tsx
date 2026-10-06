@@ -222,7 +222,7 @@ export default function VerifyCertificatePage() {
                 </div>
                 <div className="w-14 h-14 relative hidden sm:block">
                   <Image
-                    src="/images/logo.jpg"
+                    src="/examsphere02/images/logo.jpg"
                     alt="Exam Sphere Seal"
                     width={56}
                     height={56}

@@ -278,7 +278,7 @@ export default function OlympiadPortalCard({
                 <div className="flex items-center gap-2">
                   <div className="relative w-9 h-9 rounded-full overflow-hidden border border-gold-400 bg-navy-950 flex-shrink-0">
                     <Image
-                      src="/images/logo.jpg"
+                      src="/examsphere02/images/logo.jpg"
                       alt="Exam Sphere Seal"
                       fill
                       sizes="36px"

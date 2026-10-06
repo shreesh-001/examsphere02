@@ -52,7 +52,7 @@ export default function Navbar() {
           >
             <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-gold-400/80 bg-navy-950 shadow-md group-hover:border-gold-300 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
               <Image
-                src="/images/logo.jpg"
+                src="/examsphere02/images/logo.jpg"
                 alt="Exam Sphere Emblem Logo"
                 fill
                 sizes="48px"

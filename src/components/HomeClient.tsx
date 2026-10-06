@@ -52,7 +52,7 @@ export default function HomeClient() {
                 {/* Emblem frame */}
                 <div className="relative w-44 h-44 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl border-4 border-gold-400/90 bg-navy-950 group">
                   <Image
-                    src="/images/logo.jpg"
+                    src="/examsphere02/images/logo.jpg"
                     alt="Exam Sphere Official Circular Emblem"
                     fill
                     sizes="176px"

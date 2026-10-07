@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/examsphere02",
-  assetPrefix: "/examsphere02/",
 
   images: {
     unoptimized: true,

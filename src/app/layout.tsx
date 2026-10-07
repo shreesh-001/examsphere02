@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     "Training & Skill Development",
     "Certificate Verification",
   ],
+  icons: {
+    icon: "/images/logo.jpg",
+    shortcut: "/images/logo.jpg",
+    apple: "/images/logo.jpg",
+  },
 };
 
 export default function RootLayout({

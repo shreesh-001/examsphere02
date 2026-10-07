@@ -11,7 +11,7 @@ export default function Watermark() {
     >
       <div className="relative w-[300px] h-[300px] sm:w-[460px] sm:h-[460px] md:w-[560px] md:h-[560px] lg:w-[660px] lg:h-[660px] rounded-full overflow-hidden opacity-[0.045] mix-blend-multiply">
         <Image
-          src="/examsphere02/images/logo.jpg"
+          src="/images/logo.jpg"
           alt="Exam Sphere Background Watermark"
           fill
           sizes="(max-width: 768px) 460px, 660px"

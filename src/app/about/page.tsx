@@ -128,7 +128,7 @@ export default function AboutPage() {
               <div className="bg-gradient-to-b from-navy-900 to-navy-950 text-white rounded-3xl p-8 border border-gold-500/40 shadow-2xl relative text-center w-full max-w-md">
                 <div className="relative w-36 h-36 mx-auto mb-5 rounded-full overflow-hidden border-4 border-gold-400 bg-white shadow-xl">
                   <Image
-                    src="/examsphere02/images/logo.jpg"
+                    src="/images/logo.jpg"
                     alt="Exam Sphere Emblem"
                     fill
                     sizes="144px"

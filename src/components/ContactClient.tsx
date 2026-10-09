@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   MapPin,
   Phone,
@@ -8,10 +9,12 @@ import {
   Clock,
   Send,
   CheckCircle2,
+  AlertCircle,
   Building,
   ChevronDown,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import { EMAILJS_CONFIG } from "@/config/emailjs";
 
 const faqs = [
   {
@@ -33,6 +36,7 @@ const faqs = [
 ];
 
 export default function ContactClient() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,16 +48,64 @@ export default function ContactClient() {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    if (!formRef.current) return;
 
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const serviceId =
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || EMAILJS_CONFIG.serviceId;
+    const templateId =
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || EMAILJS_CONFIG.templateId;
+    const publicKey =
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || EMAILJS_CONFIG.publicKey;
+
+    if (!serviceId || !templateId || !publicKey) {
       setIsSubmitting(false);
+      setErrorMessage(
+        "Email service configuration is missing. Please set NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY."
+      );
+      return;
+    }
+
+    try {
+      await emailjs.sendForm(serviceId, templateId, formRef.current, {
+        publicKey: publicKey,
+      });
+
       setSubmitted(true);
-    }, 600);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        vertical: "General Inquiry",
+        subject: "",
+        message: "",
+      });
+      formRef.current.reset();
+    } catch (error: unknown) {
+      console.error("EmailJS sending error:", error);
+      let errorText =
+        "Failed to send your message. Please check your network connection and try again.";
+      if (
+        typeof error === "object" &&
+        error !== null &&
+        "text" in error &&
+        typeof (error as { text: unknown }).text === "string"
+      ) {
+        errorText = (error as { text: string }).text;
+      } else if (error instanceof Error) {
+        errorText = error.message;
+      }
+      setErrorMessage(errorText);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -250,7 +302,33 @@ export default function ContactClient() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                    {errorMessage && (
+                      <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-start gap-3">
+                        <AlertCircle className="w-5 h-5 flex-shrink-0 text-red-500 mt-0.5" />
+                        <div className="flex-grow">
+                          <p className="font-semibold">{errorMessage}</p>
+                          <p className="text-xs text-red-600 mt-1">
+                            You can also write to us directly at{" "}
+                            <a
+                              href="mailto:examsphereindia12@gmail.com"
+                              className="underline font-bold hover:text-red-800"
+                            >
+                              examsphereindia12@gmail.com
+                            </a>{" "}
+                            or call{" "}
+                            <a
+                              href="tel:+918881088575"
+                              className="underline font-bold hover:text-red-800"
+                            >
+                              +91 88810 88575
+                            </a>
+                            .
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Name & Email */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
@@ -259,6 +337,7 @@ export default function ContactClient() {
                         </label>
                         <input
                           type="text"
+                          name="name"
                           required
                           value={formData.name}
                           onChange={(e) =>
@@ -275,6 +354,7 @@ export default function ContactClient() {
                         </label>
                         <input
                           type="email"
+                          name="email"
                           required
                           value={formData.email}
                           onChange={(e) =>
@@ -294,6 +374,7 @@ export default function ContactClient() {
                         </label>
                         <input
                           type="tel"
+                          name="phone"
                           required
                           value={formData.phone}
                           onChange={(e) =>
@@ -309,6 +390,7 @@ export default function ContactClient() {
                           Service Needed
                         </label>
                         <select
+                          name="service"
                           value={formData.vertical}
                           onChange={(e) =>
                             setFormData({ ...formData, vertical: e.target.value })
@@ -333,6 +415,7 @@ export default function ContactClient() {
                       </label>
                       <input
                         type="text"
+                        name="subject"
                         required
                         value={formData.subject}
                         onChange={(e) =>
@@ -349,6 +432,7 @@ export default function ContactClient() {
                         Your Message <span className="text-red-500">*</span>
                       </label>
                       <textarea
+                        name="message"
                         required
                         rows={4}
                         value={formData.message}
@@ -360,13 +444,20 @@ export default function ContactClient() {
                       />
                     </div>
 
+                    {/* Aliases for template variable flexibility */}
+                    <input type="hidden" name="from_name" value={formData.name} />
+                    <input type="hidden" name="from_email" value={formData.email} />
+                    <input type="hidden" name="reply_to" value={formData.email} />
+                    <input type="hidden" name="phone_number" value={formData.phone} />
+                    <input type="hidden" name="service_needed" value={formData.vertical} />
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
                       className="w-full bg-gold-500 hover:bg-gold-400 text-navy-950 font-bold py-3.5 px-6 rounded-xl shadow-gold hover:shadow-gold-lg transition-all text-sm flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       {isSubmitting ? (
-                        <span>Sending message...</span>
+                        <span>Sending...</span>
                       ) : (
                         <>
                           <Send className="w-4 h-4" />

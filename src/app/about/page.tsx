@@ -53,6 +53,37 @@ const coreValues = [
   },
 ];
 
+const coreTeamData = [
+  {
+    name: "Gyanve Sharma",
+    designation: "Managing Director (Operations)",
+    initials: "GS",
+    description:
+      "Directs nationwide examination operations, center administration, and logistical workflows with a commitment to process excellence and precision.",
+  },
+  {
+    name: "Tanisha Pathak",
+    designation: "Academic Head",
+    initials: "TP",
+    description:
+      "Oversees academic curriculum design, evaluation benchmarks, and quality assurance across school Olympiads and assessment programs.",
+  },
+  {
+    name: "Disha Singh Srinet",
+    designation: "Coordinator and Account Head",
+    initials: "DS",
+    description:
+      "Leads institutional coordination, stakeholder communications, and financial governance to ensure seamless operational alignment.",
+  },
+  {
+    name: "Shreesh",
+    designation: "Technical Head",
+    initials: "S",
+    description:
+      "Drives technological architecture, digital testing platforms, data security protocols, and software infrastructure across all services.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white text-slate-800">
@@ -251,6 +282,39 @@ export default function AboutPage() {
               <p className="text-sm text-slate-600 leading-relaxed">
                 Committed to delivering robust digital and physical exam infrastructure, student empowerment, and error-free evaluation systems.
               </p>
+            </div>
+          </div>
+
+          {/* Core Team Subsection */}
+          <div className="mt-16 sm:mt-20 pt-14 sm:pt-16 border-t border-slate-200/80">
+            <SectionHeading
+              eyebrow="Core Team"
+              title="Our Core Team"
+              description="The dedicated team driving academic excellence, operational efficiency, and technological innovation."
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
+              {coreTeamData.map((member) => (
+                <div
+                  key={member.name}
+                  className="bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-20 h-20 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md group-hover:scale-105 transition-transform duration-300">
+                      {member.initials}
+                    </div>
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-navy-900 mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-semibold text-gold-600 uppercase tracking-wider mb-3 min-h-[2.5rem] flex items-center justify-center">
+                      {member.designation}
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {member.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

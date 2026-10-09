@@ -16,6 +16,7 @@ import {
   Star,
   Building,
   ArrowRight,
+  Mail,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { partnersData } from "@/data/partnersData";
@@ -53,11 +54,25 @@ const coreValues = [
   },
 ];
 
-const coreTeamData = [
+interface TeamMember {
+  name: string;
+  designation: string;
+  initials: string;
+  image?: string;
+  linkedin?: string;
+  email?: string;
+  description: string;
+}
+
+const coreTeamData: TeamMember[] = [
   {
     name: "Gyanve Sharma",
     designation: "Managing Director (Operations)",
     initials: "GS",
+    image: "/images/gyanve-sharma.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/gyanvesharma?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    email: "Gyanves@gmail.com",
     description:
       "Directs nationwide examination operations, center administration, and logistical workflows with a commitment to process excellence and precision.",
   },
@@ -65,6 +80,7 @@ const coreTeamData = [
     name: "Tanisha Pathak",
     designation: "Academic Head",
     initials: "TP",
+    image: "/images/tanisha-pathak.jpg",
     description:
       "Oversees academic curriculum design, evaluation benchmarks, and quality assurance across school Olympiads and assessment programs.",
   },
@@ -72,6 +88,7 @@ const coreTeamData = [
     name: "Disha Singh Srinet",
     designation: "Coordinator and Account Head",
     initials: "DS",
+    image: "/images/disha-singh-srinet.jpg",
     description:
       "Leads institutional coordination, stakeholder communications, and financial governance to ensure seamless operational alignment.",
   },
@@ -79,6 +96,7 @@ const coreTeamData = [
     name: "Shreesh",
     designation: "Technical Head",
     initials: "S",
+    image: "/images/shreesh.jpg",
     description:
       "Drives technological architecture, digital testing platforms, data security protocols, and software infrastructure across all services.",
   },
@@ -254,9 +272,15 @@ export default function AboutPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md">
-                AK
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 group">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/images/ashwani-kumar.jpg"
+                  alt="Ashwani Kumar - Founder"
+                  fill
+                  sizes="(max-width: 640px) 96px, 112px"
+                  className="object-cover object-center"
+                />
               </div>
               <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
                 Ashwani Kumar
@@ -269,9 +293,15 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md">
-                UA
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 group">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/images/uvesh-ahmad.jpg"
+                  alt="Uvesh Ahmad - Founder"
+                  fill
+                  sizes="(max-width: 640px) 96px, 112px"
+                  className="object-cover object-center"
+                />
               </div>
               <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
                 Uvesh Ahmad
@@ -300,9 +330,21 @@ export default function AboutPage() {
                   className="bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="w-20 h-20 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md group-hover:scale-105 transition-transform duration-300">
-                      {member.initials}
-                    </div>
+                    {member.image ? (
+                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
+                        <Image
+                          src={member.image}
+                          alt={`${member.name} - ${member.designation}`}
+                          fill
+                          sizes="(max-width: 640px) 96px, 112px"
+                          className="object-cover object-center"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-navy-900 text-gold-400 font-serif text-2xl sm:text-3xl font-bold flex items-center justify-center mx-auto mb-4 border-2 border-gold-400 shadow-md group-hover:scale-105 transition-transform duration-300">
+                        {member.initials}
+                      </div>
+                    )}
                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-navy-900 mb-1">
                       {member.name}
                     </h3>
@@ -313,6 +355,45 @@ export default function AboutPage() {
                       {member.description}
                     </p>
                   </div>
+
+                  {(member.linkedin || member.email) && (
+                    <div className="pt-4 mt-4 border-t border-slate-200/80 flex flex-col items-center gap-2">
+                      <div className="flex flex-wrap items-center justify-center gap-2">
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${member.name} LinkedIn Profile`}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 text-xs font-semibold transition-all duration-200 shadow-sm"
+                          >
+                            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                            </svg>
+                            <span>LinkedIn</span>
+                          </a>
+                        )}
+                        {member.email && (
+                          <a
+                            href={`mailto:${member.email}`}
+                            aria-label={`Email ${member.name}`}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-slate-100 text-navy-900 text-xs font-semibold transition-all duration-200 border border-slate-300 shadow-sm"
+                          >
+                            <Mail className="w-3.5 h-3.5 text-gold-600" />
+                            <span>Email</span>
+                          </a>
+                        )}
+                      </div>
+                      {member.email && (
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="text-[11px] text-slate-500 hover:text-navy-900 transition-colors truncate max-w-full"
+                        >
+                          {member.email}
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

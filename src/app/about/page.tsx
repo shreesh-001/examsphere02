@@ -85,8 +85,8 @@ const coreTeamData: TeamMember[] = [
       "Oversees academic curriculum design, evaluation benchmarks, and quality assurance across school Olympiads and assessment programs.",
   },
   {
-    name: "Disha Singh Srinet",
-    designation: "Coordinator and Account Head",
+    name: "Disha Singh",
+    designation: "Coordinator and Accounts Head",
     initials: "DS",
     image: "/images/disha-singh-srinet.jpg",
     description:
@@ -276,7 +276,7 @@ export default function AboutPage() {
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
                 <Image
                   src="/images/ashwani-kumar.jpg"
-                  alt="Ashwani Kumar - Founder"
+                  alt="Ashwani Kumar - Co-Founder and CEO"
                   fill
                   sizes="(max-width: 640px) 96px, 112px"
                   className="object-cover object-center"
@@ -286,7 +286,7 @@ export default function AboutPage() {
                 Ashwani Kumar
               </h3>
               <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
-                Founder
+                Co-Founder and CEO
               </p>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Dedicated to setting the highest benchmarks in assessment integrity, nationwide examination logistics, and transparent academic testing.
@@ -297,7 +297,7 @@ export default function AboutPage() {
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
                 <Image
                   src="/images/uvesh-ahmad.jpg"
-                  alt="Uvesh Ahmad - Founder"
+                  alt="Uvesh Ahmad - Co-founder and Managing Partner"
                   fill
                   sizes="(max-width: 640px) 96px, 112px"
                   className="object-cover object-center"
@@ -307,7 +307,7 @@ export default function AboutPage() {
                 Uvesh Ahmad
               </h3>
               <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
-                Founder
+                Co-founder and Managing Partner
               </p>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Committed to delivering robust digital and physical exam infrastructure, student empowerment, and error-free evaluation systems.

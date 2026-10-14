@@ -81,6 +81,8 @@ const coreTeamData: TeamMember[] = [
     designation: "Academic Head",
     initials: "TP",
     image: "/images/tanisha-pathak.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/tanisha-pathak-985aa6247?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     description:
       "Oversees academic curriculum design, evaluation benchmarks, and quality assurance across school Olympiads and assessment programs.",
   },
@@ -89,6 +91,8 @@ const coreTeamData: TeamMember[] = [
     designation: "Coordinator and Accounts Head",
     initials: "DS",
     image: "/images/disha-singh-srinet.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/disha-singh-192b70442?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     description:
       "Leads institutional coordination, stakeholder communications, and financial governance to ensure seamless operational alignment.",
   },
@@ -97,6 +101,8 @@ const coreTeamData: TeamMember[] = [
     designation: "Technical Head",
     initials: "S",
     image: "/images/shreesh.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/shreesh-9270a8368?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     description:
       "Drives technological architecture, digital testing platforms, data security protocols, and software infrastructure across all services.",
   },
@@ -272,46 +278,80 @@ export default function AboutPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 group">
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
-                <Image
-                  src="/images/ashwani-kumar.jpg"
-                  alt="Ashwani Kumar - Co-Founder and CEO"
-                  fill
-                  sizes="(max-width: 640px) 96px, 112px"
-                  className="object-cover object-center"
-                />
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src="/images/ashwani-kumar.jpg"
+                    alt="Ashwani Kumar - Co-Founder and CEO"
+                    fill
+                    sizes="(max-width: 640px) 96px, 112px"
+                    className="object-cover object-center"
+                  />
+                </div>
+                <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
+                  Ashwani Kumar
+                </h3>
+                <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
+                  Co-Founder and CEO
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Dedicated to setting the highest benchmarks in assessment integrity, nationwide examination logistics, and transparent academic testing.
+                </p>
               </div>
-              <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
-                Ashwani Kumar
-              </h3>
-              <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
-                Co-Founder and CEO
-              </p>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Dedicated to setting the highest benchmarks in assessment integrity, nationwide examination logistics, and transparent academic testing.
-              </p>
+
+              <div className="pt-4 mt-6 border-t border-slate-200/80 flex justify-center">
+                <a
+                  href="https://www.linkedin.com/in/ashwani-kumar-17b006250?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ashwani Kumar LinkedIn Profile"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 text-xs font-semibold transition-all duration-200 shadow-sm"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
 
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 group">
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
-                <Image
-                  src="/images/uvesh-ahmad.jpg"
-                  alt="Uvesh Ahmad - Co-founder and Managing Partner"
-                  fill
-                  sizes="(max-width: 640px) 96px, 112px"
-                  className="object-cover object-center"
-                />
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:border-gold-500 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 overflow-hidden border-2 border-gold-400 shadow-md bg-navy-900 group-hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src="/images/uvesh-ahmad.jpg"
+                    alt="Uvesh Ahmad - Co-founder and Managing Partner"
+                    fill
+                    sizes="(max-width: 640px) 96px, 112px"
+                    className="object-cover object-center"
+                  />
+                </div>
+                <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
+                  Uvesh Ahmad
+                </h3>
+                <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
+                  Co-founder and Managing Partner
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Committed to delivering robust digital and physical exam infrastructure, student empowerment, and error-free evaluation systems.
+                </p>
               </div>
-              <h3 className="font-serif text-2xl font-bold text-navy-900 mb-1">
-                Uvesh Ahmad
-              </h3>
-              <p className="text-xs font-semibold text-gold-600 uppercase tracking-widest mb-3">
-                Co-founder and Managing Partner
-              </p>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Committed to delivering robust digital and physical exam infrastructure, student empowerment, and error-free evaluation systems.
-              </p>
+
+              <div className="pt-4 mt-6 border-t border-slate-200/80 flex justify-center">
+                <a
+                  href="https://www.linkedin.com/in/er-uvesh-ahmad-aa3334232?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Uvesh Ahmad LinkedIn Profile"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 text-xs font-semibold transition-all duration-200 shadow-sm"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
           </div>
 

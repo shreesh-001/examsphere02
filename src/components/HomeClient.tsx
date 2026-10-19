@@ -208,18 +208,22 @@ export default function HomeClient() {
             light={false}
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto mb-8">
             {/* Partner Cards */}
             {partnersData.map((partner) => (
               <div
                 key={partner.id}
-                className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-gold-500 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-gold-500 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gold-50 text-gold-700 border border-gold-200">
-                      <GraduationCap className="w-3.5 h-3.5 text-gold-600" />
-                      {partner.badge || "Academic Partner"}
+                      {partner.type === "legal" ? (
+                        <Scale className="w-3.5 h-3.5 text-gold-600" />
+                      ) : (
+                        <GraduationCap className="w-3.5 h-3.5 text-gold-600" />
+                      )}
+                      {partner.badge || "Partner"}
                     </span>
                     {partner.rating && (
                       <div className="inline-flex items-center gap-1 text-xs font-semibold bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full border border-emerald-200">
@@ -249,60 +253,71 @@ export default function HomeClient() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-                  <a
-                    href={partner.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-850 active:scale-95 text-white font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-md hover:shadow-lg transition-all group/btn"
-                  >
-                    <span>View on Justdial</span>
-                    <ExternalLink className="w-4 h-4 text-gold-400 group-hover/btn:translate-x-0.5 transition-transform" />
-                  </a>
+                  {partner.isExternal ? (
+                    <a
+                      href={partner.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-850 active:scale-95 text-white font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-md hover:shadow-lg transition-all group/btn"
+                    >
+                      <span>{partner.linkText || "View Profile"}</span>
+                      <ExternalLink className="w-4 h-4 text-gold-400 group-hover/btn:translate-x-0.5 transition-transform" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={partner.link}
+                      className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-850 active:scale-95 text-white font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-md hover:shadow-lg transition-all group/btn"
+                    >
+                      <span>{partner.linkText || "Contact Partner"}</span>
+                      <ArrowRight className="w-4 h-4 text-gold-400 group-hover/btn:translate-x-0.5 transition-transform" />
+                    </Link>
+                  )}
 
                   <span className="text-xs text-slate-500">
-                    Verified Institutional Partner
+                    {partner.type === "legal" ? "Verified Legal Partner" : "Verified Institutional Partner"}
                   </span>
                 </div>
               </div>
             ))}
+          </div>
 
-            {/* Partnership Network Info Card */}
-            <div className="lg:col-span-5 bg-gradient-to-b from-navy-900 to-navy-950 text-white rounded-3xl p-6 sm:p-8 border border-navy-800 shadow-md flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 border border-gold-400/30 flex items-center justify-center mb-5">
-                  <Building className="w-6 h-6" />
+          {/* Partnership Network Info Banner */}
+          <div className="max-w-5xl mx-auto bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-navy-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-gold-500/20 text-gold-400 border border-gold-400/30 mb-3">
+                <Building className="w-3.5 h-3.5" />
+                <span>Join Our Network</span>
+              </div>
+              <h4 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
+                Partner Your Institution or Firm
+              </h4>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                Join Exam Sphere&apos;s verified testing network. We collaborate with degree colleges, educational institutions, law firms, and examination centers to conduct secure computer-based and offline assessments.
+              </p>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-300">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
+                  <span>Host Exam Centers</span>
                 </div>
-                <h4 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
-                  Partner Your College or School
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                  Join Exam Sphere&apos;s verified testing network. We collaborate with degree colleges, polytechnics, and schools to conduct secure computer-based and offline examinations.
-                </p>
-                <div className="space-y-2.5 text-xs text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                    <span>Host National & State Examination Centers</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                    <span>Conduct School & College Talent Olympiads</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
-                    <span>Educational Support Goods & Services</span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
+                  <span>Talent Olympiads</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-400 flex-shrink-0" />
+                  <span>Institutional Support</span>
                 </div>
               </div>
+            </div>
 
-              <div className="pt-6 mt-6 border-t border-navy-800">
-                <Link
-                  href="/contact?subject=College%20Partnership%20Inquiry"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 active:scale-95 text-navy-950 font-bold px-6 py-3 rounded-full text-xs sm:text-sm shadow-gold transition-all"
-                >
-                  <span>Become a Partner</span>
-                  <ArrowRight className="w-4 h-4 text-navy-950" />
-                </Link>
-              </div>
+            <div className="flex-shrink-0 w-full md:w-auto">
+              <Link
+                href="/contact?subject=Partnership%20Inquiry"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 active:scale-95 text-navy-950 font-bold px-7 py-3.5 rounded-full text-xs sm:text-sm shadow-gold transition-all"
+              >
+                <span>Become a Partner</span>
+                <ArrowRight className="w-4 h-4 text-navy-950" />
+              </Link>
             </div>
           </div>
         </div>

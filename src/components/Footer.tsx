@@ -307,10 +307,10 @@ export default function Footer() {
                 <div>
                   <strong className="text-white block font-semibold mb-0.5">Public Email:</strong>
                   <a
-                    href="mailto:examsphereindia12@gmail.com"
+                    href="mailto:support@examspheregroup.in"
                     className="hover:text-gold-300 text-xs sm:text-sm text-slate-300 block transition-colors break-all"
                   >
-                    examsphereindia12@gmail.com
+                    support@examspheregroup.in
                   </a>
                 </div>
               </div>

@@ -222,10 +222,10 @@ export default function ContactClient() {
                     <p className="text-xs sm:text-sm text-slate-600">
                       Public Email:{" "}
                       <a
-                        href="mailto:examsphereindia12@gmail.com"
+                        href="mailto:support@examspheregroup.in"
                         className="text-navy-950 font-semibold hover:text-gold-600 break-all"
                       >
-                        examsphereindia12@gmail.com
+                        support@examspheregroup.in
                       </a>
                     </p>
                     <p className="text-[11px] text-slate-500 mt-1">
@@ -311,10 +311,10 @@ export default function ContactClient() {
                           <p className="text-xs text-red-600 mt-1">
                             You can also write to us directly at{" "}
                             <a
-                              href="mailto:examsphereindia12@gmail.com"
+                              href="mailto:support@examspheregroup.in"
                               className="underline font-bold hover:text-red-800"
                             >
-                              examsphereindia12@gmail.com
+                              support@examspheregroup.in
                             </a>{" "}
                             or call{" "}
                             <a

@@ -312,18 +312,34 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-slate-200/80 flex justify-center">
+              <div className="pt-4 mt-6 border-t border-slate-200/80 flex flex-col items-center gap-2">
+                <div className="flex flex-wrap items-center justify-center gap-2">
+                  <a
+                    href="https://www.linkedin.com/in/ashwani-kumar-17b006250?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ashwani Kumar LinkedIn Profile"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 text-xs font-semibold transition-all duration-200 shadow-sm"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                    </svg>
+                    <span>LinkedIn</span>
+                  </a>
+                  <a
+                    href="mailto:ashwanikumar@examspheregroup.in"
+                    aria-label="Email Ashwani Kumar"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-slate-100 text-navy-900 text-xs font-semibold transition-all duration-200 border border-slate-300 shadow-sm"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Email</span>
+                  </a>
+                </div>
                 <a
-                  href="https://www.linkedin.com/in/ashwani-kumar-17b006250?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Ashwani Kumar LinkedIn Profile"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-navy-900 hover:bg-gold-500 text-white hover:text-navy-950 text-xs font-semibold transition-all duration-200 shadow-sm"
+                  href="mailto:ashwanikumar@examspheregroup.in"
+                  className="text-[11px] text-slate-500 hover:text-navy-900 transition-colors truncate max-w-full"
                 >
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                  </svg>
-                  <span>LinkedIn</span>
+                  ashwanikumar@examspheregroup.in
                 </a>
               </div>
             </div>

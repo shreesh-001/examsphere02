@@ -4,6 +4,11 @@ export interface PartnerInstitution {
   category: string;
   location: string;
   fullAddress: string;
+  chamberAddress?: string;
+  phone?: string;
+  phoneSecondary?: string;
+  email?: string;
+  specialization?: string;
   established?: string;
   rating?: string;
   ratingCount?: string;
@@ -37,12 +42,19 @@ export const partnersData: PartnerInstitution[] = [
   {
     id: "jsv-associates",
     name: "JSV Associates",
-    category: "Law Firm | Legal Advisory",
-    location: "Lucknow, Uttar Pradesh",
-    fullAddress: "Lucknow, Uttar Pradesh – 226006, India",
+    category: "Law Firm | Criminal, Taxation & Corporate Advisory",
+    location: "Prayagraj & Allahabad High Court, UP",
+    fullAddress:
+      "First Floor, 61D/9A/2G, Ram Chandra Puram, Gali No-2, Salori Shukla Market, Near Taxi Stand, Prayagraj – 211004",
+    chamberAddress:
+      "Chamber No. 31, Old Building, Allahabad High Court, Dist. Prayagraj – 211017",
+    phone: "+91 7007122489",
+    phoneSecondary: "+91 9554503322",
+    email: "kprai5100@gmail.com",
+    specialization: "Criminal & Taxation • Allahabad High Court Litigation",
     badge: "Law Firm Partner",
     description:
-      "A respected legal advisory firm founded by Adv. Kaushalendra Pratap Rai, partnering with Exam Sphere LLP to ensure complete statutory compliance, governance, contract integrity, and institutional legal advisory across all examination operations.",
+      "A premier legal advisory and litigation firm founded by Adv. Kaushalendra Pratap Rai (Advocate, Allahabad High Court). Partnering with Exam Sphere LLP to ensure complete statutory compliance, governance, contract integrity, and institutional legal advisory across all examination operations.",
     link: "/contact?subject=Legal%20Partnership%20Inquiry%20-%20JSV%20Associates",
     linkText: "Contact Partner",
     isExternal: false,

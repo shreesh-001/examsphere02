@@ -17,6 +17,7 @@ import {
   Building,
   ArrowRight,
   Mail,
+  Phone,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { partnersData } from "@/data/partnersData";
@@ -113,6 +114,7 @@ const coreTeamData: TeamMember[] = [
     subDesignation: "(Founder, JSV Associate)",
     initials: "KR",
     image: "/images/kaushalendra-pratap-rai.jpg",
+    email: "kprai5100@gmail.com",
     description:
       "Oversees corporate legal affairs, regulatory compliance, statutory governance, and institutional contract advisory across all operations.",
   },
@@ -505,9 +507,55 @@ export default function AboutPage() {
                     {partner.description}
                   </p>
 
-                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-600 mb-6">
-                    <strong className="text-slate-800 block mb-0.5">Address:</strong>
-                    {partner.fullAddress}
+                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-xs text-slate-600 mb-6 space-y-2.5">
+                    <div>
+                      <strong className="text-slate-800 block mb-0.5">
+                        {partner.chamberAddress ? "Office Address:" : "Address:"}
+                      </strong>
+                      <span>{partner.fullAddress}</span>
+                    </div>
+
+                    {partner.chamberAddress && (
+                      <div className="pt-2 border-t border-slate-200/60">
+                        <strong className="text-slate-800 block mb-0.5">High Court Chamber:</strong>
+                        <span>{partner.chamberAddress}</span>
+                      </div>
+                    )}
+
+                    {partner.specialization && (
+                      <div className="pt-2 border-t border-slate-200/60">
+                        <strong className="text-slate-800 block mb-0.5">Practice Areas:</strong>
+                        <span className="text-gold-700 font-medium">{partner.specialization}</span>
+                      </div>
+                    )}
+
+                    {(partner.phone || partner.email) && (
+                      <div className="pt-2 border-t border-slate-200/60 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-700">
+                        {partner.phone && (
+                          <div className="flex items-center gap-1.5">
+                            <Phone className="w-3.5 h-3.5 text-gold-600 flex-shrink-0" />
+                            <a
+                              href={`tel:${partner.phone.replace(/[^0-9+]/g, "")}`}
+                              className="hover:text-gold-600 transition-colors font-medium"
+                            >
+                              {partner.phone}
+                              {partner.phoneSecondary ? `, ${partner.phoneSecondary}` : ""}
+                            </a>
+                          </div>
+                        )}
+                        {partner.email && (
+                          <div className="flex items-center gap-1.5">
+                            <Mail className="w-3.5 h-3.5 text-gold-600 flex-shrink-0" />
+                            <a
+                              href={`mailto:${partner.email}`}
+                              className="hover:text-gold-600 transition-colors font-medium"
+                            >
+                              {partner.email}
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 

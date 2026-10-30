@@ -617,7 +617,6 @@ export default function OlympiadsClient() {
                       onChange={(e) =>
                         setRegForm({ ...regForm, schoolName: e.target.value })
                       }
-                      placeholder="e.g. Delhi Public School"
                       className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-500"
                     />
                   </div>
@@ -636,7 +635,6 @@ export default function OlympiadsClient() {
                           coordinatorName: e.target.value,
                         })
                       }
-                      placeholder="e.g. Mrs. Sunita Sharma"
                       className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-500"
                     />
                   </div>
@@ -652,7 +650,6 @@ export default function OlympiadsClient() {
                       onChange={(e) =>
                         setRegForm({ ...regForm, email: e.target.value })
                       }
-                      placeholder="school@example.com"
                       className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-500"
                     />
                   </div>
@@ -668,7 +665,6 @@ export default function OlympiadsClient() {
                       onChange={(e) =>
                         setRegForm({ ...regForm, phone: e.target.value })
                       }
-                      placeholder="+91 98765 43210"
                       className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-500"
                     />
                   </div>
@@ -684,7 +680,6 @@ export default function OlympiadsClient() {
                       onChange={(e) =>
                         setRegForm({ ...regForm, city: e.target.value })
                       }
-                      placeholder="e.g. Jaunpur, UP"
                       className="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-gold-500"
                     />
                   </div>
